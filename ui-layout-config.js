@@ -1,23 +1,21 @@
-// WANAS UI Layout & Navigation Configuration - إعدادات التخطيط والشريطين العلوي والسفلي
+/**
+ * WANAS UI Layout & Safe Area Configuration
+ * إعدادات تخطيط الواجهات ومناطق الأمان والهوية البصرية لونس
+ */
+
 const UI_LAYOUT_CONFIG = {
-  direction: "RTL",
-  safeArea: {
-    top: "مراعاة مساحة شريط الحالة (Status Bar) والنوتش",
-    bottom: "مراعاة مساحة أزرار النظام السفلية (Gesture Bar)"
+  theme: {
+    mode: "Dark",
+    backgroundColor: "#000000", // الوضع الداكن النقي المطلوب
+    primaryColor: "#D4AF37"     // النقطة الذهبية
   },
-  bottomNavigationBar: {
-    alignment: "من اليمين لليسار لراحة الإبهام الأيمن",
-    tabs: [
-      { position: 1, name: "الرئيسية", route: "/home", align: "أقصى اليمين" },
-      { position: 2, name: "فيديو", route: "/video", align: "اليمين الوسط" },
-      { position: 3, name: "المجالس", route: "/rooms", align: "المنتصف (Audio Rooms)" },
-      { position: 4, name: "الونسة", route: "/chats", align: "اليسار الوسط" },
-      { position: 5, name: "الملف", route: "/profile", align: "أقصى اليسار" }
-    ]
+  typography: {
+    fontFamily: "Cairo",
+    direction: "rtl"
   },
-  topHeaderBar: {
-    logo: "شعار W مع النقطة الذهبية الثابتة",
-    actions: ["الإشعارات", "طلبات الصداقة", "وضع هدوء الصلاة"]
+  screenLayout: {
+    safeAreaPadding: "مراعاة مساحات الشاشة العلوية والسفلية (Safe Area)",
+    thumbFriendlyNavigation: "شريط تنقل سفلي مصمم لراحة الإبهام"
   }
 };
 
