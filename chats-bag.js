@@ -1,16 +1,19 @@
-// WANAS Chats & Bag System - نظام الونسة الخاصة والحقيبة في ونس
+/**
+ * WANAS Chats & Wanas Bag System - نظام حقيبة ونس والدردشات الخاصة
+ * إدارة الرسائل الفورية، الوسائط، والدردشات الفردية والجماعية بأمان تام
+ */
+
 const CHATS_BAG_CONFIG = {
-  features: {
-    bagAttachments: [
-      "صورة", "كاميرا", "فيديو", "ملف (PDF/DOCX)",
-      "موقعي", "جهة اتصال", "صوت", "استفتاء", "ختم"
-    ],
-    specialMessages: {
-      timeKey: "رسالة مفتاح الوقت (تتفتح في وقت محدد)",
-      disappearing: "رسالة مؤقتة تختفي بعد ساعة أو يوم",
-      viewOnce: "صورة أو فيديو لمرة واحدة مع مؤقت تنازلي"
-    },
-    sealsAndStickers: "صانع الأختام (ختم كامل، مفرغ، أو قص حر مع ختم بصوت)"
+  chatFeatures: {
+    endToEndEncryption: true,
+    mediaSharing: "دعم إرسال الصور، الفيديوهات، والرسائل الصوتية",
+    messageStatus: " مؤشرات القراءة والاستلام",
+    pureBlackTheme: "متوافق كلياً مع الوضع الداكن النقي #000000"
+  },
+  bagCategories: {
+    privateChats: "الدردشات الثنائية الخاصة",
+    communityChats: "مراسلات المجالس والمجموعات",
+    savedMessages: "حقيبة المحفوظات والرسائل المعلقة"
   }
 };
 
