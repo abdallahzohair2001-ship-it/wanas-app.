@@ -1,0 +1,16 @@
+{
+  "name": "wanas-app",
+  "version": "1.1.0",
+  "description": "WANAS - ونس: مجتمع دافئ بصوت قريب",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "wanas",
+    "social",
+    "audio-rooms"
+  ],
+  "author": "Abdallah Zohair",
+  "license": "MIT"
+}
