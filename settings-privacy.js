@@ -1,14 +1,18 @@
-// WANAS Settings, Privacy & Download Controls - الإعدادات العامة والخصوصية في ونس
+/**
+ * WANAS Settings & Privacy System - نظام الإعدادات والخصوصية في ونس
+ * إدارة إعدادات الحساب، الخصوصية، والتحكم بالأمان
+ */
+
 const SETTINGS_PRIVACY_CONFIG = {
-  accountSettings: "تعديل الملف الشخصي، الأمان، كلمة المرور، وربط الحسابات",
   privacyControls: {
-    profileVisibility: "التحكم في من يرى منشوراتك وحالتك (الكل، الأصدقاء، مخصص)",
-    downloadProtection: "منع أو السماح للآخرين بتنزيل صور وفيديوهات ومرفقات منشوراتك",
-    activityStatus: "إظهار أو إخفاء حالة الاتصال وظهورك في الونسة"
+    profileVisibility: "تحكم في ظهور الملف الشخصي (الكل، المتابعون، فقط أنا)",
+    activityStatus: "إدارة ظهور حالة النشاط ومتواجد الآن",
+    blockAndMute: "إدارة قائمة المستخدمين المحظورين والمكتومين"
   },
-  appearance: {
-    theme: "التبديل بين الوضع الداكن (Pure Black #000000) والوضع الفاتح",
-    font: "خط Cairo المعتمد بالكامل"
+  generalSettings: {
+    themeMode: "الوضع الداكن النقي (#000000) بشكل افتراضي دائم",
+    language: "اللغة العربية مع دعم اتجاه RTL والخط (Cairo)",
+    notificationsControl: "تخصيص كامل للتنبيهات والأصوات"
   }
 };
 
