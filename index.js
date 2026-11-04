@@ -1,50 +1,32 @@
-/**
- * WANAS Central Server - السيرفر المركزي المتكامل لتطبيق ونس
- * يربط كافة موديولات المنصة (التبويبات، المجالس، الدردشات، العملات، والخصوصية)
- */
-
 const express = require('express');
+const cors = require('cors');
+const supabase = require('./supabaseClient');
+
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-// استيراد كافة إعدادات ونظم منصة ونس
-const themeConfig = require('./wanas-theme.json');
-const uiLayout = require('./ui-layout-config.js');
-const tabsConfig = require('./tabs.config.js');
-const audioRooms = require('./audio-rooms.js');
-const chatsBag = require('./chats-bag.js');
-const postsAdvanced = require('./posts-advanced-features.js');
-const liveVideo = require('./live-video-streaming.js');
-const wCoinEconomy = require('./w-coin-economy.js');
-const verificationBadges = require('./verification-badges.js');
-const notificationsAlerts = require('./notifications-alerts.js');
-const settingsPrivacy = require('./settings-privacy.js');
-const healthCheck = require('./integration-health-check.js');
-
+app.use(cors());
 app.use(express.json());
 
-// نقطة البداية واختبار صحة النظام الشامل
+// مسار فحص الحالة والصحة
 app.get('/api/health', (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "منصة ونس تعمل بكفاءة تامة 100%",
-    systemStatus: healthCheck,
-    activeTheme: uiLayout.theme,
-    timestamp: new Date().toISOString()
-  });
+  res.json({ status: 'online', app: 'ونس - WANAS', version: '1.0.0' });
 });
 
-// مسار جلب إعدادات التبويبات والهوية البصرية
-app.get('/api/config/tabs', (req, res) => {
-  res.status(200).json({
-    tabs: tabsConfig,
-    layout: uiLayout
-  });
+// مسار تجربة الاتصال بقاعدة البيانات
+app.get('/api/test-db', async (req, res) => {
+  try {
+    const { data, error } = await supabase.from('wanas_users').select('*').limit(1);
+    if (error && error.code !== 'PGRST116' && error.code !== '42P01') {
+      return res.status(500).json({ status: 'error', message: error.message });
+    }
+    res.json({ status: 'success', message: 'السيرفر متصل بقاعدة بيانات Supabase بنجاح!', data: data || [] });
+  } catch (err) {
+    res.status(500).json({ status: 'error', message: err.message });
+  }
 });
 
-// بدء تشغيل السيرفر المركزي
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`WANAS Server is running successfully on port ${PORT} with Pure Black theme (#000000)`);
+  console.log(`WANAS Server running on port ${PORT}`);
 });
 
 module.exports = app;
