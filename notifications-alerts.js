@@ -1,12 +1,19 @@
-// WANAS Notifications & Alerts System - نظام الإشعارات والتنبيهات في ونس
+/**
+ * WANAS Notifications & Alerts System - نظام الإشعارات والتنبيهات في ونس
+ * إدارة التنبيهات الفورية للمجالس، الرسائل، والتفاعلات
+ */
+
 const NOTIFICATIONS_ALERTS_CONFIG = {
-  notificationTypes: [
-    { category: "المجالس الصوتية", description: "تنبيه عند بدء مجلس لمُتابع أو دعوة للانضمام كمتحدث" },
-    { category: "التفاعلات والمنشورات", description: "إشعارات الإعجابات، التفاعلات التسعة، والتعليقات الجديدة" },
-    { category: "الونسة الخاصة", description: "تنبيهات الرسائل الفورية، رسائل مفتاح الوقت، والصورة لمرة واحدة" },
-    { category: "الصلاة والهواء", description: "تنبيه نظام هدوء الصلاة وكتم الإشعارات المؤقت وقت الأذان" }
-  ],
-  settings: "إمكانية التحكم الكامل في تخصيص أو كتم إشعارات كل قسم على حدة بكل سهولة."
+  notificationTypes: {
+    audioRooms: "تنبيهات بدء المجالس والدعوات للانضمام",
+    socialInteractions: "إشعارات الإعجابات، التعليقات، والإشارات (Mentions)",
+    directMessages: "تنبيهات الرسائل الفورية وحقيبة ونس",
+    systemAlerts: "الإعلانات الرسمية والتحديثات الأمنية"
+  },
+  deliverySettings: {
+    pushNotifications: "دعم الإشعارات الفورية للهواتف الذكية",
+    inAppAlerts: "تنبيهات بصرية داخل الواجهات متوافقة مع الوضع الداكن"
+  }
 };
 
 module.exports = NOTIFICATIONS_ALERTS_CONFIG;
