@@ -1,0 +1,15 @@
+{
+  "app_name": "WANAS",
+  "version": "1.1",
+  "brand_color": "#F0C95A",
+  "dark_mode": {
+    "background": "#000000",
+    "cards": "#121216",
+    "text": "#FFFFFF"
+  },
+  "light_mode": {
+    "background": "#F5F5F8",
+    "cards": "#FFFFFF",
+    "text": "#000000"
+  }
+}
